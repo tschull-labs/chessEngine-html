@@ -10,11 +10,18 @@ export class ChessBoard {
       });
     }
   }
+  displayPieces(pieces) {
+    this.squares.forEach((square, i) => {
+      if (pieces[i]) {
+        square.textContent = pieces[i].symbol;
+      }
+    });
+  }
 }
 
 export class ChessPiece {
   constructor() {
-    const pieces = [
+    this.startPieces = [
       { name: "rook", color: "white", symbol: "♖" },
       { name: "knight", color: "white", symbol: "♘" },
       { name: "bishop", color: "white", symbol: "♗" },
